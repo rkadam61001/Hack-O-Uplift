@@ -1,6 +1,7 @@
 <h1> Aiken</h1>
 <i>This repository is for Hack-O-Uplift</i>
-### Project Theme:Education
+
+###  Project Theme: Education
 <h1>Problem Statement:</h1>
 To create a application for teacher so that they can upload the tests mainly quizes on moodle smoothly.
 
