@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./FileSaver.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+
+
+        function onFormSubmit() {
+            var Data = readFormData();
+            newFormat(Data);
+        }
+
+        function readFormData() {
+            var formData = {};
+            formData["que"] = document.getElementById("que").value;
+            formData["opt1"] = document.getElementById("opt1").value;
+            formData["opt2"] = document.getElementById("opt2").value;
+            formData["opt3"] = document.getElementById("opt3").value;
+            formData["opt4"] = document.getElementById("opt4").value;
+            formData["ans"] = document.getElementById("ans").value;
+            return formData;
+        }
+
+
+
+        function newFormat(data) {
+            var content = document.getElementById("result").innerHTML =
+                data.que + "\r\nA. " + data.opt1 + "\r\nB. " + data.opt2 + "\r\nC. " + data.opt3 + "\r\nD. " + data.opt4 + "\r\nANSWER: " + data.ans;
+
+            // Download File_________
+            document.getElementById('create').addEventListener('click', function () {
+                var text = document.getElementById('result').value;
+                var filename = "info";
+                var blob = new Blob([text], {
+                    type: "text/plain;charset=utf-8"
+                });
+
+                saveAs(blob, filename);
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Aiken</h1>
+    <form action="" autocomplete="off" onsubmit="event.preventDefault(); ">
+        <div class="div-input">
+            <label for=""> question:- </label>
+            <input type="text" id="que" required>
+        </div></br>
+
+        <div class="div-input">
+            <label for="">option A:- </label>
+            <input type="text" id="opt1" required>
+        </div></br>
+
+        <div class="div-input">
+            <label for="">option B:- </label>
+            <input type="text" id="opt2" required>
+        </div></br>
+
+        <div class="div-input">
+            <label for="">option C:- </label>
+            <input type="text" id="opt3" required>
+        </div></br>
+
+        <div class="div-input">
+            <label for="">option D:- </label>
+            <input type="text" id="opt4" required>
+        </div></br>
+
+        <div class="div-input">
+            <label for="">ANSWER:- </label>
+            <input type="text" id="ans" required placeholder="Enter only A/B/C/D">
+        </div></br>
+
+        <div>
+            <input type="submit" name="submit" class="btn" onclick="onFormSubmit();">
+        </div></br>
+    </form>
+    <div class="result-text">
+        <textarea name="" cols="50" rows="8" id="result"></textarea>
+        <button id="create" class="btn">Create file</button>
+    </div>
+
+</body>
+
+</html>
