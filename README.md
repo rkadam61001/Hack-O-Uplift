@@ -17,6 +17,13 @@ D. Must be this one!<br>
 ANSWER: D<br>
 ### What problem does our application solve?
  Our application takes care of each and every aspects that are required for aiken format.Only the user have to simply enter question ,options and the answer.And the whole formatting will be done by the application itself.
+ 
+ ### Solution provided:
+ We have try to provide solutions in three ways one with CPP,Java using swing package and other by creating web page.
+ ### Tech Stack used:
+ - CPP
+ - Java
+ - HTML,CSS,JS
 
 
 
