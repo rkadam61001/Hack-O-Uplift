@@ -11,56 +11,46 @@ int main()
     string d="D.";
     ofstream fout;
     fout.open("Aiken.txt");
-  int choice;
-  while(true)
+  string choice;
+  while(choice != "n")
   {
-      cout<<"\n1.option \n2.exit";
-      cin>>choice;
-      if(choice==2)
+      cout<<"\nEnter option u want to perform\n y.queans \n n.exit: ";
+      getline(cin,choice);
+      if(choice=="n")
       {
           break;
       }
-      switch(choice)
+      if(choice=="y")
       {
-        case 1:
              while(fout)
             {
-            cout<<" Enter the question";
-            getline(cin,que);
-            if(que=="-1")
-            {
-                break;
-            }
-            fout<<" "<<que<<endl;
-            cout<<"\n Enter option 1";
-            getline(cin,opt1);
-            fout<<a+" "<<opt1<<endl;
-            cout<<"\n Enter option 2";
-            getline(cin,opt2);
-            fout<<b+" "<<opt2<<endl;
-            cout<<"\n Enter option 3";
-            getline(cin,opt3);
-            fout<<c+" "<<opt3<<endl;
-            cout<<"\n Enter option 4";
-            getline(cin,opt4);
-            fout<<d+" "<<opt4<<endl;
-            cout<<"\n Enter ans";
-            getline(cin,ans);
-            fout<<"ANSWER: "<<ans<<endl;
+                cout<<" Enter the question: ";
+                getline(cin,que);
+               if(que=="-1")
+               {
+                    break;
+                }
+                else{
+                        fout<<que<<endl;
+                }
+                cout<<"\n Enter option A: ";
+                getline(cin,opt1);
+                fout<<a+" "<<opt1<<endl;
+                cout<<"\n Enter option B: ";
+                getline(cin,opt2);
+                fout<<b+" "<<opt2<<endl;
+                cout<<"\n Enter option C: ";
+                getline(cin,opt3);
+                fout<<c+" "<<opt3<<endl;
+                cout<<"\n Enter option D: ";
+                getline(cin,opt4);
+                fout<<d+" "<<opt4<<endl;
+                cout<<"\n Enter ans as A/B/C/D: ";
+                getline(cin,ans);
+               fout<<"ANSWER: "<<ans<<endl;
+               fout<<endl;
             }
       }
-
-
-      }
-
-
-     /*   getline(cin,que);
-        if(que=="-1")
-        {
-            break;
-        }
-        fout<<" "<<que<<endl;*/
-    //}
-
+  }
     myfile.close();
 }
